@@ -207,7 +207,7 @@ function createGrid() {
         for (i = 0; i < 16; i++) {
             index++
             addGrid(index)
-            console.log('thdfg')
+            // console.log('thdfg')
         }
     }
 
@@ -223,21 +223,21 @@ function clickPosition(num){
         for (let i = 0; i < enemyBackBase.length; i++) {
             if (enemyBackBase[i].includes(num)) {
                 if(i === 0 && currentPosition === "ally-base"){
-                    console.log("backright")
+                    // console.log("backright")
                     goTo('right-wing')
                     logActions(`Go to enemy right wing army`)
                     
     
                 }
                 if(i === 1){
-                    console.log("center")
+                    // console.log("center")
                     goTo('center-back')
                     logActions(`Go to enemy center back army`)
                     
     
                 }
                 if(i === 2 && currentPosition === "ally-base"){
-                    console.log("backleft")
+                    // console.log("backleft")
                     goTo('left-wing')
                     logActions(`Go to enemy left wing army`)
                     
@@ -256,7 +256,7 @@ function clickPosition(num){
     
 
     if(enenyMainBase.includes(num)){
-        console.log('nigga')
+        // console.log('nigga')
         goTo('enemy-base')
         mainDash.style.display = "block"
         GRID.style.pointerEvents = "none"
@@ -376,7 +376,7 @@ function computerChoose() {
     const randomIndex = Math.floor(Math.random() * options.length);
     computerChoice.textContent = options[randomIndex] 
     enemyChoice = options[randomIndex] 
-    console.log(options[randomIndex])
+    // console.log(options[randomIndex])
 }
 
 
