@@ -222,32 +222,34 @@ function clickPosition(num){
 
         for (let i = 0; i < enemyBackBase.length; i++) {
             if (enemyBackBase[i].includes(num)) {
+
                 if(i === 0 && currentPosition === "ally-base"){
                     // console.log("backright")
+                    
                     goTo('right-wing')
                     logActions(`Go to enemy right wing army`)
                     
     
-                }
-                if(i === 1){
+                } else if(i === 1 && !(currentPosition === "ally-base")){
                     // console.log("center")
                     goTo('center-back')
                     logActions(`Go to enemy center back army`)
                     
     
-                }
-                if(i === 2 && currentPosition === "ally-base"){
+                } else if(i === 2 && currentPosition === "ally-base"){
                     // console.log("backleft")
                     goTo('left-wing')
                     logActions(`Go to enemy left wing army`)
                     
+                } else{
+                    return
                 }
 
                 mainDash.style.display = "block"
                 GRID.style.pointerEvents = "none"
                 landing.style.display = "none"
 
-                return
+                
             }
         }
 
@@ -255,7 +257,7 @@ function clickPosition(num){
     }
     
 
-    if(enenyMainBase.includes(num)){
+    if(enenyMainBase.includes(num) && currentPosition == 'center-back'){
         // console.log('nigga')
         goTo('enemy-base')
         mainDash.style.display = "block"
